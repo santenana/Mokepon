@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUEGO UwU</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>  
+    <section id="Selecionar-Mascota">
+        <h1 class="Titulo">🌱💧🔥 Monster Kombat 🔥💧🌱 </h1>
+        <h2 class= "subtitulos">Selecciona una mascota:</h2>
+        <div id= 'ContenedorTarjetas' class="Targetas">
+            
+        </div>
+        <button id = "buttom_selec_mascota">Seleccionar</button>
+    </section>
+
+
+    <section id="Selecionar-ataque">
+        <h2 id ="SelectAtack">Selecciona un ataque:</h2>
+
+        <div id = 'ContenedorAtaques' class="Combate">
+        </div>
+
+
+        <div id ="Mensajes">
+            <p id = "resultado">Suerte</p>
+            <section id="Reiniciar">
+                <button id="buttom_selec_reiniciar">Reiniciar Kombate</button>
+            </section>
+        </div>
+
+        <div class ="FinJuego">
+            <div class= "menajes-ataquesJ">
+                <p id="Mascota_Jugador"></p>
+                <p id = 'Titulo-vidas'>Victorias del Jugador</p>
+                <p id= 'Vida-Juagdor'> </p>
+
+                <div id = "ataques-del-jugador"></div>
+                <!-- <div id = "ataque-JugaA" style="display:none ;"></div>
+                <div id = "ataque-JugaT" style="display:none ;"></div> -->
+                <!-- <p id="MascJug"> Tu mascota <span id="Mascota_Jugador"></span> tiene <span id= 'Vida-Juagdor'>3</span> vidas</p> -->
+            </div>
+                
+           <div class= "menajes-ataquesE">
+                <p id="Mascota_Rival"></p>
+                <p id = 'Titulo-vidas'>Victorias del Enemigo</p>
+                <p id= 'Vida-Enemigo'> </p>
+  
+                <div id = "ataques-del-enemigo"></div> 
+                <!-- <div id = "ataque-EnemA" style="display:none ;"></div> 
+                <div id = "ataque-EnemT" style="display:none ;"></div> -->
+           </div>
+        </div>
+    </section>
+    <script src="/js/funciones.js"></script>
+</body>
+</html>

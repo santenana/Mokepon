@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    font-family: 'Fredoka One', cursive;
+    background-color: #5800FF;   
+}
+
+section#Selecionar-Mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+
+
+h1.Titulo{
+    width: 550px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    /* border: 5px solid #F2DF3A; */
+    color:white;
+    font-size: 32px;
+    margin: auto;
+}
+
+
+h2.subtitulos{
+    color:white;
+    font-size: 24px; 
+}
+
+
+section#Selecionar-Mascota{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+.Targetas{
+    display: flex;
+    gap:10px;
+}
+
+.targeta_diseño{
+    width: 100px;
+    height: 150px;
+    background-color: #3AB4F2;
+    padding: 8px;
+    box-sizing: border-box;
+    margin: 4px;
+    border: 4px solid #AFB4FF;
+    font-size: 12px;
+    border-radius: 5px;
+    display: flex;
+    align-content: space-around;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.Targetas img{
+    width: 60px;
+}
+
+
+button#buttom_selec_mascota{
+    width: 90px;
+    height: 30px;
+    background-color: #FFB562;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px solid #F87474;
+    border-radius: 5px;
+    font-family: 'Poppins', cursive;
+}
+
+input{
+    display: none; 
+}
+
+input:checked + label{
+   background-color:#DFF6FF;
+}
+
+
+section#Selecionar-ataque{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    color:white;
+    font-size: 12px;
+    margin: auto;
+}
+
+
+h2#SelectAtack{
+    color:white;
+    font-size: 20px;
+    margin: auto;
+    margin: 30px 5px 20px 5px;
+}
+
+button.EstiloBoton{
+    width: 90px;
+    height: 30px;
+    background-color: #FBDF07;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px solid #FF7F3F;
+    border-radius: 5px;
+    color: #D1512D;
+}
+
+
+div#Mensajes{
+    width: 230px;
+    height: 60px;
+    background-color: #F47340;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+p#resultado{
+    width: 220px;
+    height: 30px;
+    background-color: #F47340;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button#buttom_selec_reiniciar{
+    border: transparent;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    background-color: #34B3F1;
+    color: #000000;
+}
+
+
+
+div#ataque-JugaF{
+    width: 180px;
+    height: 30px;
+    background-color: #FF7F3F;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+div#ataque-JugaA{
+    width: 180px;
+    height: 30px;
+    background-color: #0096FF;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+div#ataque-JugaT{
+    width: 180px;
+    height: 30px;
+    background-color: #A47E3B;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+div#ataque-EnemF{
+    width: 180px;
+    height: 30px;
+    background-color: #FF7F3F;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+div#ataque-EnemA{
+    width: 180px;
+    height: 30px;
+    background-color: #0096FF;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+div#ataque-EnemT{
+    width: 180px;
+    height: 30px;
+    background-color: #A47E3B;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+div#ataque-Enem{
+    width: 180px;
+    height: 30px;
+    background-color: #A66CFF;
+    padding: 5px; 
+    box-sizing: border-box;
+    margin: 5px 5px 5px 5px;
+    border: 2px ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+div.FinJuego{
+    display: grid;
+    grid-template-columns: 240px 240px ;
+}
+
+p#Titulo-vidas{
+    font-family: 'Press Start 2P' ;
+    font-size: 16px;
+}
+
+p#Vida-Enemigo{
+    font-family: 'Press Start 2P' ;
+    font-size: 16px;
+    color: #FF7F3F;
+}
+
+p#Vida-Juagdor{
+    font-family: 'Press Start 2P' ;
+    font-size: 16px;
+    color: #FF7F3F;
+}
+
+
+div.menajes-ataquesJ, div.menajes-ataquesE{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------- EN ESTA PARTE SE MODIFICA EL LAYOUT EN OTROS TAMAÑOS ----------*/
+
+@media (max-width:360px){
+    h1.Titulo{
+        width: 360px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        color:white;
+        font-size: 16px;
+        margin: auto;
+    }
+
+    h2.subtitulos{
+        color:white;
+        font-size: 16px; 
+
+    }
+
+    label.targeta_diseño img{
+        width: 30px;
+    }
+
+    label.targeta_diseño{
+        width: 70px;
+        height: 75px;
+        background-color: #3AB4F2;
+        padding: 8px;
+        box-sizing: border-box;
+        margin: 4px;
+        border: 4px solid #AFB4FF;
+        font-size: 8px;
+        border-radius: 5px;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+
+    }
+
+    div.Targetas{
+        flex-direction: column;
+
+    }
+
+    section.Selecionar-ataque{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        color:white;
+        font-size: 8px;
+        margin: auto;
+    }
+
+    h2#SelectAtack{
+        color:white;
+        font-size: 12px;
+        margin: auto;
+        margin: 20px 4px 20px 4 px;
+    }
+
+    button.EstiloBoton{
+        width: 50px;
+        height: 30px;
+        background-color: #FBDF07;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px solid #FF7F3F;
+        border-radius: 5px;
+        color: #D1512D;
+        font-size: 8px;
+    }
+
+    div#Mensajes{
+        width: 120px;
+        height: 30px;
+        background-color: #F47340;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        font-size: 8px;
+    }
+
+    p#resultado{
+        width: 100px;
+        height: 20px;
+        background-color: #F47340;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 2px 2px 2px 2px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6px;
+    }
+
+
+    div.FinJuego{
+        display: grid;
+        grid-template-columns: 120px 120px ;
+    }
+
+    p#Titulo-vidas{
+        font-family: 'Press Start 2P' ;
+        font-size: 6px;
+    }
+    p#Vida-Enemigo{
+        font-family: 'Press Start 2P' ;
+        font-size: 8px;
+        color: #FF7F3F;
+    }
+    
+    p#Vida-Juagdor{
+        font-family: 'Press Start 2P' ;
+        font-size: 8px;
+        color: #FF7F3F;
+    }
+
+    div#ataque-JugaF{
+        width: 90px;
+        height: 20px;
+        background-color: #FF7F3F;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    div#ataque-JugaA{
+        width: 90px;
+        height: 20px;
+        background-color: #0096FF;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    div#ataque-JugaT{
+        width: 90px;
+        height: 20px;
+        background-color: #A47E3B;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    div#ataque-EnemF{
+        width: 90px;
+        height: 20px;
+        background-color: #FF7F3F;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    div#ataque-EnemA{
+        width: 90px;
+        height: 20px;
+        background-color: #0096FF;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    div#ataque-EnemT{
+        width: 90px;
+        height: 20px;
+        background-color: #A47E3B;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    div#ataque-Enem{
+        width: 90px;
+        height: 20px;
+        background-color: #A66CFF;
+        padding: 5px; 
+        box-sizing: border-box;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button#buttom_selec_reiniciar{
+        border: transparent;
+        margin: 5px 5px 5px 5px;
+        border: 2px ;
+        border-radius: 5px;
+        background-color: #34B3F1;
+        color: #000000;
+        font-size: 8px;
+
+    }
+    
+    div.menajes-ataquesJ, div.menajes-ataquesE{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
