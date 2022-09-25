@@ -113,7 +113,7 @@ function iniciarJuego(){
         opcionmokepon = `
         <input type ="radio" name="mascota" id= ${element.name} />
         <label class="targeta_diseño" for= ${element.name} >
-            <p>${element.name}</p>
+            <p id = "P-Mascota">${element.name}</p>
             <img src= ${element.img} alt=${element.name}>
         </label>
         `
@@ -126,6 +126,7 @@ function iniciarJuego(){
     botonSelecMascota.addEventListener('click',seleccionarMascotaJugador)
     BotonReinicio.addEventListener('click',reiniciar)
 }
+
 
 
 function seleccionarMascotaJugador(){
@@ -151,6 +152,8 @@ function seleccionarMascotaJugador(){
     mascotaEnemiga()
 }
 
+
+
 function ExtraerAtaque(MascotaJugadorAtaque){
     let Atack 
     for (let i = 0; i < mokepones.length; i++) {
@@ -161,6 +164,8 @@ function ExtraerAtaque(MascotaJugadorAtaque){
     
     mostrarAtaques(Atack)
 }
+
+
 
 function mostrarAtaques(Atack){
     Atack.forEach((ataque)=>{
@@ -181,8 +186,6 @@ function mostrarAtaques(Atack){
     BotonTierra = document.getElementById('buttom_selec_tierra')
     BotonMeteoro = document.getElementById('buttom_selec_meteoro')
     BotonMontaña = document.getElementById('buttom_selec_montaña')
-
-
     botones = document.querySelectorAll('.ButAtaque')
 }
 
@@ -194,44 +197,53 @@ function secuenciaAtaque(){
             // console.log(e)
             if (e.target.textContent === '🔥\n        '){
                 ataquejugador.push('🔥')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '☀️\n        '){
                 ataquejugador.push('☀️')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '💥\n        '){
                 ataquejugador.push('💥')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
 
 
             } else if (e.target.textContent === '💧\n        ') {
                 ataquejugador.push('💧')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '🌊\n        ') {
                 ataquejugador.push('🌊')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '❄️\n        ') {
                 ataquejugador.push('❄️')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
            
 
             } else if (e.target.textContent === '🌱\n        '){
                 ataquejugador.push('🌱')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '☄️\n        '){
                 ataquejugador.push('☄️')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '🗻\n        '){
                 ataquejugador.push('🗻')
-                console.log(ataquejugador)
+                // console.log(ataquejugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             }
             ataqueEnemigo()
 
@@ -241,13 +253,13 @@ function secuenciaAtaque(){
 }
 
 
+
 function mascotaEnemiga(){
     let enemigo=random(0,(mokepones.length-1))
     spanMascotaEnemigo.innerHTML = mokepones[enemigo].name
     AtackE = mokepones[enemigo].ataque
     secuenciaAtaque()    
 }
-
 
 
 
@@ -263,15 +275,19 @@ function ataqueEnemigo(){
     else if (enemigo_atk == 4 || enemigo_atk == 5){
         ataqueenemigo.push('🌱')
     }
-    console.log(ataqueenemigo)
+    // console.log(ataqueenemigo)
     inicializarPelea()
 }
+
+
 
 function inicializarPelea(){
     if (ataquejugador.length == 5){
         combate()      
     }
 }
+
+
 
 function indextovar(JugadorInd,EnemigoInd){
     indexAtaqueJugador = ataquejugador[JugadorInd]
@@ -285,7 +301,7 @@ function combate(){
     for (let i = 0; i < ataquejugador.length; i++) {
         if(ataquejugador[i] == ataqueenemigo[i]){
             indextovar(i, i)
-            crearMensaje ( "Empate 😑")
+            crearMensaje ( "Empate 😑")           
                  
         // Condiciones de victoria del jugador    
         }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') && ataqueenemigo[i] == '🌱'){
@@ -301,38 +317,32 @@ function combate(){
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
 
+
         // Condiciones de victoria de la maquina
         }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  ataqueenemigo[i] == '🔥'){
             indextovar(i, i)
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
-
         }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  ataqueenemigo[i] == '🌱'){
-        indextovar(i, i)
-        crearMensaje ("Perdiste 😞")
-        vidasEnemigo ++
-        
+            indextovar(i, i)
+            crearMensaje ("Perdiste 😞")
+            vidasEnemigo ++
         }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  ataqueenemigo[i] == '💧'){
             indextovar(i, i)
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
 
 
-
         // Condiciones de Empate
         }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  ataqueenemigo[i] == '🌱'){
             indextovar(i, i)
             crearMensaje ( "Empate 😑")
-
         }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  ataqueenemigo[i] == '💧'){
-        indextovar(i, i)
-        crearMensaje ( "Empate 😑")
-        
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")
         }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  ataqueenemigo[i] == '🔥'){
             indextovar(i, i)
             crearMensaje ( "Empate 😑")
-
-
         }else {
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
@@ -340,8 +350,6 @@ function combate(){
     }
     revisarVidas()
 }
-
-
 
 
 
@@ -361,30 +369,12 @@ function crearMensaje(resultado){
 
 
 
-
-
-
 function MensajeBatalla(ResultadoFinal){
     sectionresultado.innerHTML = ResultadoFinal 
-// En esta seccion se desabilitan los botones cuando despues de 
-// que se cumpla la condicion de que gane o perdi
-// los botones quedan desabilitados
-    BotonFuego.disabled = true
-    // BotonSol.disabled = true
-    // BotonExplosion.disabled = true
-
-    BotonAgua.disabled = true
-    // BotonHielo.disabled = true
-    // BotonOla.disabled = true
-
-    BotonTierra.disabled = true
-    // BotonMontaña.disabled = true
-    // BotonMeteoro.disabled = true
-
-
     sectionSeleccionarreiniciar.style.display = 'block'
 
 }
+
 
 
 function revisarVidas(){
@@ -401,16 +391,17 @@ function revisarVidas(){
 }
 
 
+
 function reiniciar(){
     location.reload()
 }
+
+
 
 function random (min, max){
     return Math.floor(Math.random() * (max-min+1)+min);
 }
 
 window.addEventListener('load',iniciarJuego)
-
-
 
     

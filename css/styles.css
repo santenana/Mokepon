@@ -47,6 +47,17 @@ section#Selecionar-Mascota{
 
 
 
+div.Combate{
+    display: flex;
+    /* width: 650; */
+    height: 30px;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+
+}
+
 .Targetas{
     display: flex;
     gap:10px;
@@ -102,6 +113,7 @@ section#Selecionar-ataque{
     color:white;
     font-size: 12px;
     margin: auto;
+
 }
 
 
@@ -113,7 +125,7 @@ h2#SelectAtack{
 }
 
 button.EstiloBoton{
-    width: 90px;
+    width: 70px;
     height: 30px;
     background-color: #FBDF07;
     padding: 5px; 
@@ -126,7 +138,7 @@ button.EstiloBoton{
 
 
 div#Mensajes{
-    width: 230px;
+    width: 200px;
     height: 60px;
     background-color: #F47340;
     padding: 5px; 
@@ -141,7 +153,7 @@ div#Mensajes{
 }
 
 p#resultado{
-    width: 220px;
+    width: 180px;
     height: 30px;
     background-color: #F47340;
     padding: 5px; 
@@ -153,6 +165,7 @@ p#resultado{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 10px;
 }
 
 button#buttom_selec_reiniciar{
@@ -162,88 +175,10 @@ button#buttom_selec_reiniciar{
     border-radius: 5px;
     background-color: #34B3F1;
     color: #000000;
+    font-size: 10px;
 }
 
 
-
-div#ataque-JugaF{
-    width: 180px;
-    height: 30px;
-    background-color: #FF7F3F;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-div#ataque-JugaA{
-    width: 180px;
-    height: 30px;
-    background-color: #0096FF;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-div#ataque-JugaT{
-    width: 180px;
-    height: 30px;
-    background-color: #A47E3B;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-
-div#ataque-EnemF{
-    width: 180px;
-    height: 30px;
-    background-color: #FF7F3F;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-div#ataque-EnemA{
-    width: 180px;
-    height: 30px;
-    background-color: #0096FF;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
-
-div#ataque-EnemT{
-    width: 180px;
-    height: 30px;
-    background-color: #A47E3B;
-    padding: 5px; 
-    box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
-    border: 2px ;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-}
 
 div#ataque-Enem{
     width: 180px;
@@ -266,19 +201,20 @@ div.FinJuego{
 
 p#Titulo-vidas{
     font-family: 'Press Start 2P' ;
-    font-size: 16px;
+    font-size: 12px;
+    text-align: center  ;
 }
 
 p#Vida-Enemigo{
     font-family: 'Press Start 2P' ;
-    font-size: 16px;
-    color: #FF7F3F;
+    font-size: 12px;
+    background-color: transparent;
 }
 
 p#Vida-Juagdor{
     font-family: 'Press Start 2P' ;
-    font-size: 16px;
-    color: #FF7F3F;
+    font-size: 12px;
+    background-color: transparent;
 }
 
 
@@ -286,7 +222,35 @@ div.menajes-ataquesJ, div.menajes-ataquesE{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 16px;
+    margin: 2px;
+    
 }
+
+p{  
+    display: flex;
+    height: 20px;
+    width: 30px;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+p#P-Mascota{
+    background-color: transparent;
+}
+
+p#Mascota_Jugador, p#Titulo-vidas, p#Vida-Juagdor, p#Mascota_Rival,p#Titulo-vidas,p#Vida-Enemigo{
+    display: flex;
+    background-color: transparent;
+    height: 20px;
+    width: 200px;
+    align-items: center;
+    flex-direction: column;
+
+}
+
 
 /* ---------- EN ESTA PARTE SE MODIFICA EL LAYOUT EN OTROS TAMAÑOS ----------*/
 
@@ -430,84 +394,6 @@ div.menajes-ataquesJ, div.menajes-ataquesE{
         justify-content: center;
     }
     
-    div#ataque-JugaA{
-        width: 90px;
-        height: 20px;
-        background-color: #0096FF;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    div#ataque-JugaT{
-        width: 90px;
-        height: 20px;
-        background-color: #A47E3B;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    
-    div#ataque-EnemF{
-        width: 90px;
-        height: 20px;
-        background-color: #FF7F3F;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    div#ataque-EnemA{
-        width: 90px;
-        height: 20px;
-        background-color: #0096FF;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    div#ataque-EnemT{
-        width: 90px;
-        height: 20px;
-        background-color: #A47E3B;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    div#ataque-Enem{
-        width: 90px;
-        height: 20px;
-        background-color: #A66CFF;
-        padding: 5px; 
-        box-sizing: border-box;
-        margin: 5px 5px 5px 5px;
-        border: 2px ;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }
 
     button#buttom_selec_reiniciar{
         border: transparent;
