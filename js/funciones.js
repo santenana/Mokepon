@@ -99,7 +99,7 @@ ratigueya.ataque.push(
     {nombre: '🔥' , id: 'buttom_selec_fuego'},
     {nombre: '💥' , id: 'buttom_selec_exp'},
     {nombre: '☀️' , id: 'buttom_selec_sol'},
-    {nombre: '🌊' , id: 'buttom_selec_agua'},
+    {nombre: '💧' , id: 'buttom_selec_agua'},
     {nombre: '🌱' , id: 'buttom_selec_tierra'}
 )
 
@@ -191,17 +191,17 @@ function mostrarAtaques(Atack){
 function secuenciaAtaque(){
     botones.forEach((boton)=> {
         boton.addEventListener('click', (e) =>{
-  
+            // console.log(e)
             if (e.target.textContent === '🔥\n        '){
                 ataquejugador.push('🔥')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '☀️\n        '){
-                ataquejugador.push('🔥')
+                ataquejugador.push('☀️')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '💥\n        '){
-                ataquejugador.push('🔥')
+                ataquejugador.push('💥')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
 
@@ -211,11 +211,11 @@ function secuenciaAtaque(){
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '🌊\n        ') {
-                ataquejugador.push('💧')
+                ataquejugador.push('🌊')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '❄️\n        ') {
-                ataquejugador.push('💧')
+                ataquejugador.push('❄️')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
            
@@ -225,11 +225,11 @@ function secuenciaAtaque(){
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '☄️\n        '){
-                ataquejugador.push('🌱')
+                ataquejugador.push('☄️')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             } else if (e.target.textContent === '🗻\n        '){
-                ataquejugador.push('🌱')
+                ataquejugador.push('🗻')
                 console.log(ataquejugador)
                 boton.style.background = '#112f58'
             }
@@ -253,14 +253,14 @@ function mascotaEnemiga(){
 
 function ataqueEnemigo(){
     let enemigo_atk = random(0,(AtackE.length-1))
-
+    // console.table(AtackE.length)
     if (enemigo_atk == 0 || enemigo_atk == 1){
         ataqueenemigo.push('🔥')  
     }
-    else if (enemigo_atk == 3 || enemigo_atk == 4 ){
+    else if (enemigo_atk == 2 || enemigo_atk == 3){
         ataqueenemigo.push('💧')
     }
-    else {
+    else if (enemigo_atk == 4 || enemigo_atk == 5){
         ataqueenemigo.push('🌱')
     }
     console.log(ataqueenemigo)
@@ -268,7 +268,7 @@ function ataqueEnemigo(){
 }
 
 function inicializarPelea(){
-    if (ataquejugador.length === 5){
+    if (ataquejugador.length == 5){
         combate()      
     }
 }
@@ -286,18 +286,53 @@ function combate(){
         if(ataquejugador[i] == ataqueenemigo[i]){
             indextovar(i, i)
             crearMensaje ( "Empate 😑")
-        }else if(ataquejugador[i] == '🔥' && ataqueenemigo[i] == '🌱'){
+                 
+        // Condiciones de victoria del jugador    
+        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') && ataqueenemigo[i] == '🌱'){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
-        }else if(ataquejugador[i] == '💧' && ataqueenemigo[i] == '🔥'){
+        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') && ataqueenemigo[i] == '🔥'){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
-        }else if(ataquejugador[i] == '🌱' && ataqueenemigo[i] == '💧'){
+        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') && ataqueenemigo[i] == '💧'){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
+
+        // Condiciones de victoria de la maquina
+        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  ataqueenemigo[i] == '🔥'){
+            indextovar(i, i)
+            crearMensaje ("Perdiste 😞")
+            vidasEnemigo ++
+
+        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  ataqueenemigo[i] == '🌱'){
+        indextovar(i, i)
+        crearMensaje ("Perdiste 😞")
+        vidasEnemigo ++
+        
+        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  ataqueenemigo[i] == '💧'){
+            indextovar(i, i)
+            crearMensaje ("Perdiste 😞")
+            vidasEnemigo ++
+
+
+
+        // Condiciones de Empate
+        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  ataqueenemigo[i] == '🌱'){
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")
+
+        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  ataqueenemigo[i] == '💧'){
+        indextovar(i, i)
+        crearMensaje ( "Empate 😑")
+        
+        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  ataqueenemigo[i] == '🔥'){
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")
+
+
         }else {
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
@@ -355,8 +390,7 @@ function MensajeBatalla(ResultadoFinal){
 function revisarVidas(){
     if (vidasJugador > vidasEnemigo ){
         MensajeBatalla ('GANASTE EL COMBATE 🎉🎉🎉')
-    }
-    else if (vidasEnemigo > vidasJugador){
+    }else if (vidasEnemigo > vidasJugador){
         MensajeBatalla ('PERDISTE EL COMBATE 💀💀💀')
     } else {
         MensajeBatalla('EMPATE ⏺️')
