@@ -238,7 +238,12 @@ p{
 }
 
 p#P-Mascota{
+    display: flex;
     background-color: transparent;
+    height: 30px;
+    width: 75px;
+    flex-direction: column;
+    align-items: center;
 }
 
 p#Mascota_Jugador, p#Titulo-vidas, p#Vida-Juagdor, p#Mascota_Rival,p#Titulo-vidas,p#Vida-Enemigo{
@@ -248,8 +253,137 @@ p#Mascota_Jugador, p#Titulo-vidas, p#Vida-Juagdor, p#Mascota_Rival,p#Titulo-vida
     width: 200px;
     align-items: center;
     flex-direction: column;
+}
+
+section#Ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 
 }
+
+canvas#Mapa{
+    border: 2px solid white;
+    /* height: 400px;
+    width: 400px; */
+}
+
+div#Controles{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+
+div#BotonesMovimiento1{
+    display: grid;
+    width: 100px;
+    height: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 10px;
+}
+
+div#BotonesMovimiento1 .item:nth-child(1){
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: #00a6ed;
+    align-content: center;
+    border-radius: 5px;
+}
+
+div#BotonesMovimiento1 .item:nth-child(2){
+    grid-column: 3/3;
+    grid-row: 2/3;
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: #00a6ed;
+    align-content: center;
+    border-radius: 5px;
+}
+
+div#BotonesMovimiento1 .item:nth-child(3){
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: #00a6ed;
+    align-content: center;
+    border-radius: 5px;
+}
+
+div#BotonesMovimiento1 .item:nth-child(4){
+    grid-column: 2/3;
+    grid-row: 3/3;
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: #00a6ed;
+    align-content: center;
+    border-radius: 5px;
+}
+
+
+
+
+div#BotonesMovimiento2{
+    display: grid;
+    width: 100px;
+    height: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 10px;
+}
+
+div#BotonesMovimiento2 .item:nth-child(1){
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-family: 'Press Start 2P';
+    color: #A66CFF;
+    border-radius: 5px;
+    border: white;
+}
+
+div#BotonesMovimiento2 .item:nth-child(2){
+    grid-column: 3/3;
+    grid-row: 2/3;
+    font-family: 'Press Start 2P';
+    color: #A66CFF;
+    border-radius: 5px;
+    border: white;
+}
+
+div#BotonesMovimiento2 .item:nth-child(3){
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-family: 'Press Start 2P';
+    color: #A66CFF;
+    border-radius: 5px;
+    border: white;
+}
+
+div#BotonesMovimiento2 .item:nth-child(4){
+    grid-column: 2/3;
+    grid-row: 3/3;
+    font-family: 'Press Start 2P';
+    color: #A66CFF;
+    border-radius: 5px;
+    border: white;
+}
+
+
+
 
 
 /* ---------- EN ESTA PARTE SE MODIFICA EL LAYOUT EN OTROS TAMAÑOS ----------*/

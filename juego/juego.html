@@ -19,6 +19,25 @@
         <button id = "buttom_selec_mascota">Seleccionar</button>
     </section>
 
+    <section id="Ver-mapa">
+        <h1 class="Titulo">Recorre el mundo con tu Monster</h1>
+        <canvas id="Mapa"></canvas>
+        <div id = 'Controles'>
+            <div id = 'BotonesMovimiento1'>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponL()">⬅️ </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponR()">➡️ </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponU()">⬆️ </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponD()">⬇️ </button>
+            </div>
+            <div id = 'BotonesMovimiento2'>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponL()"> A </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponR()"> D </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponU()"> W </button>
+                <button class='item' onmouseup="DetenerMovimiento()" onmousedown="MoverMokeponD()"> S </button>
+            </div>
+        </div>
+    </section>
+
 
     <section id="Selecionar-ataque">
         <h2 id ="SelectAtack">Selecciona un ataque:</h2>
@@ -41,9 +60,6 @@
                 <p id= 'Vida-Juagdor'> </p>
 
                 <div id = "ataques-del-jugador"></div>
-                <!-- <div id = "ataque-JugaA" style="display:none ;"></div>
-                <div id = "ataque-JugaT" style="display:none ;"></div> -->
-                <!-- <p id="MascJug"> Tu mascota <span id="Mascota_Jugador"></span> tiene <span id= 'Vida-Juagdor'>3</span> vidas</p> -->
             </div>
                 
            <div class= "menajes-ataquesE">
@@ -52,8 +68,6 @@
                 <p id= 'Vida-Enemigo'> </p>
   
                 <div id = "ataques-del-enemigo"></div> 
-                <!-- <div id = "ataque-EnemA" style="display:none ;"></div> 
-                <div id = "ataque-EnemT" style="display:none ;"></div> -->
            </div>
         </div>
     </section>

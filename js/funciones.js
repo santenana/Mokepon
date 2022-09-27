@@ -1,33 +1,23 @@
-// Elementos de la funcion Iniciar Juego
 const sectionSeleccionarAtaque = document.getElementById('Selecionar-ataque')
 const botonSelecMascota = document.getElementById('buttom_selec_mascota')
 const sectionSeleccionarreiniciar = document.getElementById('Reiniciar')
 sectionSeleccionarreiniciar.style.display = 'none' 
-// Elementos de la funcion seleccionar mascota Jugador
 const BotonReinicio = document.getElementById('buttom_selec_reiniciar')
 const sectionSeleccionarMascota = document.getElementById('Selecionar-Mascota')
 const spanMascotaJugador = document.getElementById('Mascota_Jugador')
 const ataquesDelJugador=document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo=document.getElementById('ataques-del-enemigo')
-// Elementos de la funcion seleccionar mascota enemigo
 const enemigo = random(1,3)
 const spanMascotaEnemigo = document.getElementById('Mascota_Rival')
-
-// Elementos de la funcion combate
 const spanVidaJugador = document.getElementById('Vida-Juagdor')
 const spanVidaEnemigo = document.getElementById('Vida-Enemigo')
-
-// Elementos de la funcion crear Mensaje
 const sectionresultado = document.getElementById('resultado')
-
-
-// Elementos de la funcion Mensaje Batalla
-// * Se eliminaron los elementos que estaban repetidos
-
-// Elementos de la funcion crear mensaje
-
 const ContenedorTarjetas = document.getElementById('ContenedorTarjetas')
 const ContenedorAtaques = document.getElementById('ContenedorAtaques')
+
+const SectionVerMapa =document.getElementById('Ver-mapa')
+const mapa = document.getElementById('Mapa')
+
 
 let mokepones = []
 let botones = []
@@ -59,12 +49,13 @@ let vidasJugador = 0
 let vidasEnemigo = 0
 let ResultadoFinal
 let Res_Combat
-
 let indexAtaqueJugador
 let indexAtaqueEnemigo  
-
 let MascotaJugadorAtaque
+// let Monstruo 
 
+let lienzo = mapa.getContext("2d")
+let intervalo
 
 class Mokepon{
     constructor(nombre,foto,vidas){
@@ -72,6 +63,14 @@ class Mokepon{
         this.img = foto
         this.life = vidas
         this.ataque = []
+        this.x = 20
+        this.y = 30
+        this.ancho = 80
+        this.alto = 80
+        this.MapaFoto = new Image()
+        this.MapaFoto.src = foto
+        this.VelocidadX = 0
+        this.VelocidadY = 0
     }
 }
 
@@ -109,6 +108,8 @@ mokepones.push(hopodoge,capipepo,ratigueya)
 
 function iniciarJuego(){
     sectionSeleccionarAtaque.style.display = 'none'
+    SectionVerMapa.style.display = 'none'
+
     mokepones.forEach((element)=> {
         opcionmokepon = `
         <input type ="radio" name="mascota" id= ${element.name} />
@@ -130,21 +131,25 @@ function iniciarJuego(){
 
 
 function seleccionarMascotaJugador(){
-    sectionSeleccionarAtaque.style.display = 'flex'
+    //sectionSeleccionarAtaque.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
+    SectionVerMapa.style.display = 'flex'
+
+    iniciarmapa()
+
     if (InputHopodoge.checked){
         spanMascotaJugador.innerHTML = InputHopodoge.id
         MascotaJugadorAtaque =  InputHopodoge.id
-    }
-    else if (InputCapipepo.checked){
+        // Monstruo = InputHopodoge.id
+    }else if (InputCapipepo.checked){
         spanMascotaJugador.innerHTML = InputCapipepo.id
         MascotaJugadorAtaque =  InputCapipepo.id
-    }
-    else if (InputRatigueya.checked){
+        // Monstruo = InputCapipepo.id
+    }else if (InputRatigueya.checked){
         spanMascotaJugador.innerHTML = InputRatigueya.id
         MascotaJugadorAtaque =  InputRatigueya.id
-    }
-    else{
+        // Monstruo = InputRatigueya.id
+    }else{
         alert('Debe seleccionar una mascota')
         location.reload()
     }
@@ -398,8 +403,85 @@ function reiniciar(){
 
 
 
+function SePresionaTecla(event){
+
+    switch (event.key) {
+        case 'ArrowUp' || 'w':
+            MoverMokeponU()
+            break;
+        case 'ArrowDown'|| 's':
+            MoverMokeponD()
+            break;
+        case 'ArrowRight' || 'd':
+            MoverMokeponR()
+            break;
+        case 'ArrowLeft' || 'a':
+            MoverMokeponL()
+            break;
+        case 'w':
+            MoverMokeponU()
+            break;
+        case  's':
+            MoverMokeponD()
+            break;
+        case 'd':
+            MoverMokeponR()
+            break;
+        case 'a':
+            MoverMokeponL()
+            break;
+        default:
+            break;
+    }
+}
+
+
+
 function random (min, max){
     return Math.floor(Math.random() * (max-min+1)+min);
+}
+
+
+
+function PintarMokepon() {
+    capipepo.x = capipepo.x + capipepo.VelocidadX
+    capipepo.y = capipepo.y + capipepo.VelocidadY
+    lienzo.clearRect(0,0, mapa.width, mapa.height)
+    lienzo.drawImage(capipepo.MapaFoto,
+                     capipepo.x,
+                     capipepo.y,
+                     capipepo.ancho,
+                     capipepo.alto)
+}
+
+function MoverMokeponL(){
+    capipepo.VelocidadX = -5
+}
+
+function MoverMokeponR(){
+    capipepo.VelocidadX = 5
+}
+
+function MoverMokeponU(){
+    capipepo.VelocidadY = -5
+}
+
+function MoverMokeponD(){
+    capipepo.VelocidadY = 5
+}
+
+function DetenerMovimiento(){
+    capipepo.VelocidadX = 0
+    capipepo.VelocidadY = 0
+}
+
+
+
+function iniciarmapa(){
+    intervalo = setInterval(PintarMokepon,50)
+    window.addEventListener('keydown', SePresionaTecla)
+    window.addEventListener('keyup', DetenerMovimiento)
+
 }
 
 window.addEventListener('load',iniciarJuego)
