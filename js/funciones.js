@@ -353,8 +353,35 @@ function combate(){
     for (let i = 0; i < ataquejugador.length; i++) {
         if(ataquejugador[i] == ataqueenemigo[i]){
             indextovar(i, i)
-            crearMensaje ( "Empate 😑")           
-                 
+            crearMensaje ( "Empate 😑")  
+        }else if ((ataquejugador[i] == '☀️' && ataqueenemigo[i] == '💥') 
+               || (ataquejugador[i] == '💥' && ataqueenemigo[i] == '☀️')
+               || (ataquejugador[i] == '🔥' && ataqueenemigo[i] == '☀️')
+               || (ataquejugador[i] == '☀️' && ataqueenemigo[i] == '🔥')
+               || (ataquejugador[i] == '🔥' && ataqueenemigo[i] == '💥')
+               || (ataquejugador[i] == '💥' && ataqueenemigo[i] == '🔥')){
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")  
+        }else if ((ataquejugador[i] == '💧' && ataqueenemigo[i] == '🌊') 
+               || (ataquejugador[i] == '💧' && ataqueenemigo[i] == '❄️')
+               || (ataquejugador[i] == '🌊' && ataqueenemigo[i] == '💧')
+               || (ataquejugador[i] == '🌊' && ataqueenemigo[i] == '❄️')
+               || (ataquejugador[i] == '❄️' && ataqueenemigo[i] == '💧')
+               || (ataquejugador[i] == '❄️' && ataqueenemigo[i] == '🌊')){
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")  
+        
+        }else if ((ataquejugador[i] == '🌱' && ataqueenemigo[i] == '🗻') 
+               || (ataquejugador[i] == '🌱' && ataqueenemigo[i] == '☄️')
+               || (ataquejugador[i] == '☄️' && ataqueenemigo[i] == '🗻')
+               || (ataquejugador[i] == '☄️' && ataqueenemigo[i] == '🌱')
+               || (ataquejugador[i] == '🗻' && ataqueenemigo[i] == '🌱')
+               || (ataquejugador[i] == '🗻' && ataqueenemigo[i] == '☄️')){
+            indextovar(i, i)
+            crearMensaje ( "Empate 😑")  
+
+
+        
         // Condiciones de victoria del jugador    
         }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') && (ataqueenemigo[i] == '🌱'|| ataqueenemigo[i] == '🗻' || ataqueenemigo[i] == '☄️')){
             indextovar(i, i)
