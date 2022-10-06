@@ -20,6 +20,7 @@ const mapa = document.getElementById('Mapa')
 
 
 let mokepones = []
+let mokeponesEnemigos = []
 let botones = []
 let ataquejugador2
 let ataquejugador = []
@@ -121,8 +122,33 @@ ratigueya.ataque.push(
     {nombre: '🌱' , id: 'buttom_selec_tierra'}
 )
 
-mokepones.push(hopodoge,capipepo,ratigueya)
+hopodogeEnemigo.ataque.push(
+    {nombre: '🔥' , id: 'buttom_selec_fuego'},
+    {nombre: '💧' , id: 'buttom_selec_agua'},
+    {nombre: '❄️' , id: 'buttom_selec_hielo'},
+    {nombre: '🌊' , id: 'buttom_selec_ola'},
+    {nombre: '🌱' , id: 'buttom_selec_tierra'}
+)
 
+capipepoEnemigo.ataque.push(
+    {nombre: '🔥' , id: 'buttom_selec_fuego'},
+    {nombre: '💧' , id: 'buttom_selec_agua'},
+    {nombre: '☄️' , id: 'buttom_selec_meteoro'},
+    {nombre: '🗻' , id: 'buttom_selec_montaña'},
+    {nombre: '🌱' , id: 'buttom_selec_tierra'}
+)
+
+ratigueyaEnemigo.ataque.push(
+    {nombre: '🔥' , id: 'buttom_selec_fuego'},
+    {nombre: '💥' , id: 'buttom_selec_exp'},
+    {nombre: '☀️' , id: 'buttom_selec_sol'},
+    {nombre: '💧' , id: 'buttom_selec_agua'},
+    {nombre: '🌱' , id: 'buttom_selec_tierra'}
+)
+
+
+mokepones.push(hopodoge,capipepo,ratigueya)
+mokeponesEnemigos.push(hopodogeEnemigo,capipepoEnemigo,ratigueyaEnemigo)
 
 
 function iniciarJuego(){
@@ -150,7 +176,7 @@ function iniciarJuego(){
 
 
 function seleccionarMascotaJugador(){
-    //sectionSeleccionarAtaque.style.display = 'flex'
+    
     sectionSeleccionarMascota.style.display = 'none'
     
 
@@ -174,7 +200,7 @@ function seleccionarMascotaJugador(){
     ExtraerAtaque(MascotaJugadorAtaque)
     SectionVerMapa.style.display = 'flex'
     iniciarmapa()
-    mascotaEnemiga()
+    
 }
 
 
@@ -186,8 +212,27 @@ function ExtraerAtaque(MascotaJugadorAtaque){
             Atack = mokepones[i].ataque
         }
     }
-    
     mostrarAtaques(Atack)
+}
+
+
+
+function mascotaEnemiga(enemigo){
+    spanMascotaEnemigo.innerHTML = enemigo.name
+    AtackE = enemigo.ataque
+    secuenciaAtaque()    
+}
+
+
+
+function ExtraerAtaqueEnemigo(AtackE){
+    let AtackEnemigo
+     for (let i = 0; i < mokepones.length; i++) {
+        if(AtackE == mokeponesEnemigos[i].name){
+            AtackEnemigo = mokeponesEnemigos[i].ataque
+        }
+    }
+    ataqueEnemigo(AtackEnemigo)
 }
 
 
@@ -211,7 +256,16 @@ function mostrarAtaques(Atack){
     BotonTierra = document.getElementById('buttom_selec_tierra')
     BotonMeteoro = document.getElementById('buttom_selec_meteoro')
     BotonMontaña = document.getElementById('buttom_selec_montaña')
+
     botones = document.querySelectorAll('.ButAtaque')
+}
+
+
+function ataqueEnemigo(){
+    let j = random(0,(AtackE.length -1))
+    ataqueenemigo.push(AtackE[j].nombre)
+    console.log(ataqueenemigo)
+    inicializarPelea()
 }
 
 
@@ -279,32 +333,6 @@ function secuenciaAtaque(){
 
 
 
-function mascotaEnemiga(){
-    let enemigo=random(0,(mokepones.length-1))
-    spanMascotaEnemigo.innerHTML = mokepones[enemigo].name
-    AtackE = mokepones[enemigo].ataque
-    secuenciaAtaque()    
-}
-
-
-
-function ataqueEnemigo(){
-    let enemigo_atk = random(0,(AtackE.length-1))
-    if (enemigo_atk == 0 || enemigo_atk == 1){
-        ataqueenemigo.push('🔥')  
-    }
-    else if (enemigo_atk == 2 || enemigo_atk == 3){
-        ataqueenemigo.push('💧')
-    }
-    else if (enemigo_atk == 4 || enemigo_atk == 5){
-        ataqueenemigo.push('🌱')
-    }
-    // console.log(ataqueenemigo)
-    inicializarPelea()
-}
-
-
-
 function inicializarPelea(){
     if (ataquejugador.length == 5){
         combate()      
@@ -328,30 +356,30 @@ function combate(){
             crearMensaje ( "Empate 😑")           
                  
         // Condiciones de victoria del jugador    
-        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') && ataqueenemigo[i] == '🌱'){
+        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') && (ataqueenemigo[i] == '🌱'|| ataqueenemigo[i] == '🗻' || ataqueenemigo[i] == '☄️')){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
-        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') && ataqueenemigo[i] == '🔥'){
+        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  (ataqueenemigo[i] == '🔥' || ataqueenemigo[i] == '💥' || ataqueenemigo[i] == '☀️')){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
-        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') && ataqueenemigo[i] == '💧'){
+        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') && (ataqueenemigo[i] == '💧' || ataqueenemigo[i] == '❄️' || ataqueenemigo[i] == '🌊')){
             indextovar(i, i)
             crearMensaje ( "Ganaste 🎉")
             vidasJugador ++
 
 
         // Condiciones de victoria de la maquina
-        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  ataqueenemigo[i] == '🔥'){
+        }else if((ataquejugador[i] == '🌱'|| ataquejugador[i] == '🗻' || ataquejugador[i] == '☄️') &&  (ataqueenemigo[i] == '🔥' || ataqueenemigo[i] == '💥' || ataqueenemigo[i] == '☀️')){
             indextovar(i, i)
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
-        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  ataqueenemigo[i] == '🌱'){
+        }else if((ataquejugador[i] == '💧' || ataquejugador[i] == '❄️' || ataquejugador[i] == '🌊') &&  (ataqueenemigo[i] == '🌱'|| ataqueenemigo[i] == '🗻' || ataqueenemigo[i] == '☄️')){
             indextovar(i, i)
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
-        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  ataqueenemigo[i] == '💧'){
+        }else if((ataquejugador[i] == '🔥' || ataquejugador[i] == '💥' || ataquejugador[i] == '☀️') &&  (ataqueenemigo[i] == '💧' || ataqueenemigo[i] == '❄️' || ataqueenemigo[i] == '🌊')){
             indextovar(i, i)
             crearMensaje ("Perdiste 😞")
             vidasEnemigo ++
@@ -557,7 +585,11 @@ function revisarColision(AtackE){
         return;   
     }
     DetenerMovimiento()
-    alert('Un ' +AtackE.name +' Salvaje ha aparecido')
+    clearInterval(intervalo)
+    sectionSeleccionarAtaque.style.display = 'flex'
+    SectionVerMapa.style.display = 'none'
+    mascotaEnemiga(AtackE)
+    // alert('Un ' +AtackE.name +' Salvaje ha aparecido')
 }
 
 
