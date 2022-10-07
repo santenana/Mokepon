@@ -351,6 +351,9 @@ function indextovar(JugadorInd,EnemigoInd){
 function combate(){
 
     for (let i = 0; i < ataquejugador.length; i++) {
+        // En la rama de prueba se cambiaran valores 
+        // y logica de los ataques para que tengan valores numericos, probailidad de criticos
+        // Ataques defensivos, curativos y explosivos
         if(ataquejugador[i] == ataqueenemigo[i]){
             indextovar(i, i)
             crearMensaje ( "Empate 😑")  
