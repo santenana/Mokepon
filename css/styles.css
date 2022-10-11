@@ -93,7 +93,8 @@ button#buttom_selec_mascota{
     margin: 5px 5px 5px 5px;
     border: 2px solid #F87474;
     border-radius: 5px;
-    font-family: 'Poppins', cursive;
+    font-family: 'Popins',cursive, bold;
+    font-size: 12px;
 }
 
 input{
@@ -125,11 +126,15 @@ h2#SelectAtack{
 }
 
 button.EstiloBoton{
+    display: flex;
     width: 70px;
     height: 30px;
     background-color: #FBDF07;
     padding: 5px; 
     box-sizing: border-box;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
     margin: 5px 5px 5px 5px;
     border: 2px solid #FF7F3F;
     border-radius: 5px;
@@ -244,6 +249,7 @@ p#P-Mascota{
     width: 75px;
     flex-direction: column;
     align-items: center;
+    
 }
 
 p#Mascota_Jugador, p#Titulo-vidas, p#Vida-Juagdor, p#Mascota_Rival,p#Titulo-vidas,p#Vida-Enemigo{
@@ -382,6 +388,20 @@ div#BotonesMovimiento2 .item:nth-child(4){
     border: white;
 }
 
+h3.Titulo{
+    width: 600px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-shadow: 0 0 10px #FF731D;
+    color:white;
+    font-family: 'Press Start 2P';
+    font-size: 18px;
+    margin: 10px;
+    text-align: center;
+}
 
 
 
@@ -412,6 +432,7 @@ div#BotonesMovimiento2 .item:nth-child(4){
     }
 
     label.targeta_diseño{
+        display: flex;
         width: 70px;
         height: 75px;
         background-color: #3AB4F2;
@@ -421,8 +442,7 @@ div#BotonesMovimiento2 .item:nth-child(4){
         border: 4px solid #AFB4FF;
         font-size: 8px;
         border-radius: 5px;
-        display: flex;
-        align-content: center;
+        align-items: center;
         justify-content: flex-start;
         flex-direction: column;
 
@@ -500,19 +520,22 @@ div#BotonesMovimiento2 .item:nth-child(4){
     }
 
     p#Titulo-vidas{
+        display: flex;
+        width: 100px;
+        height: 20px;
         font-family: 'Press Start 2P' ;
-        font-size: 6px;
+        font-size: 8px;
     }
     p#Vida-Enemigo{
         font-family: 'Press Start 2P' ;
         font-size: 8px;
-        color: #FF7F3F;
+        color: white;
     }
     
     p#Vida-Juagdor{
         font-family: 'Press Start 2P' ;
         font-size: 8px;
-        color: #FF7F3F;
+        color: white;
     }
 
     div#ataque-JugaF{
@@ -544,5 +567,23 @@ div#BotonesMovimiento2 .item:nth-child(4){
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    }
+
+
+    h3.Titulo{
+        width: 250px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-content: center;
+        text-shadow: 0 0 10px #FF731D;
+        color:white;
+        font-family: 'Press Start 2P';
+        text-align: center;
+        font-size: 12px;
+        margin: 10px;
+    }
+
+
 }
