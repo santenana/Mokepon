@@ -1,0 +1,22 @@
+{
+  "name": "curso-2.-programacion-basica",
+  "version": "1.0.0",
+  "description": "Version para el uso de un servidor y uso de Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santenana/Mokepon.git"
+  },
+  "author": "Santiago Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santenana/Mokepon/issues"
+  },
+  "homepage": "https://github.com/santenana/Mokepon#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
