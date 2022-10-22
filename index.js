@@ -1,5 +1,3 @@
-// console.log("Hola Node")
-
 const express = require ("express")
 
 const app = express()
