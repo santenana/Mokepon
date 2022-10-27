@@ -251,6 +251,8 @@ function SeleccionarMokepon(MascotaJugadorAtaque){
 }
 
 
+
+
 function ExtraerAtaque(MascotaJugadorAtaque){
     let Atack 
     for (let i = 0; i < mokepones.length; i++) {
@@ -554,6 +556,7 @@ function PintarCanvas() {
                       mapa.height)
 
     hopodogeEnemigo.pintarMokepon()
+    enviarPosicion(Monstruo.x,Monstruo.y)
     ratigueyaEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     Monstruo.pintarMokepon()
@@ -566,6 +569,19 @@ function PintarCanvas() {
     }
 }
 
+
+function enviarPosicion(x,y){
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`,{
+        method: "post",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            pos_x:x,
+            pos_y:y
+        })
+    })
+}
 
 
 function MoverMokeponL(){
@@ -612,7 +628,7 @@ function obtenerMascota(){
 function iniciarmapa(){
 
     Monstruo =  obtenerMascota(MascotaJugadorAtaque)
-    intervalo = setInterval(PintarCanvas,50)
+    intervalo = setInterval(PintarCanvas,100)
     window.addEventListener('keydown', SePresionaTecla)
     window.addEventListener('keyup', DetenerMovimiento)
 
